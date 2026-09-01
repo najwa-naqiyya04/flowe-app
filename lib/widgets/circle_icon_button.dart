@@ -1,10 +1,33 @@
 import 'package:flutter/material.dart';
 
+//tolbol bulat, dengan icon di tengahnya
 class CircleIconButton extends StatelessWidget {
-  const CircleIconButton({super.key});
+  const CircleIconButton({super.key, required this.icon, required this.onTap, required this.iconColor});
+
+  final IconData icon;
+  final VoidCallback onTap;
+  final Color iconColor;
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return InkWell(
+      onTap: onTap,
+      customBorder: CircleBorder(),
+      child: Container(
+        width: 42,
+        height: 42,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withValues(alpha: 0.12),
+              blurRadius: 10,
+              offset: Offset(0, 3)
+            )
+          ]
+        ),
+        child: Icon(icon, size: 20, color: iconColor),
+      ),
+    );
   }
 }
