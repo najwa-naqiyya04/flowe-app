@@ -1,8 +1,8 @@
 import 'package:flowee_app/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 
-class DetailTotal extends StatelessWidget {
-  const DetailTotal({super.key, required this.totalPrice});
+class DetailTotalBar extends StatelessWidget {
+  const DetailTotalBar ({super.key, required this.totalPrice});
 
   final double totalPrice;
 
